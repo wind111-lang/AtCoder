@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"bufio"
+	"os"
 )
 
 func swap(a int, b int) (int, int) {
@@ -9,9 +11,13 @@ func swap(a int, b int) (int, int) {
 }
 
 func main() {
+	r := bufio.NewReader(os.Stdin)
+    w := bufio.NewWriter(os.Stdout)
+    defer w.Flush()
+
 	var n, q int
 
-	fmt.Scanf("%d", &n)
+	fmt.Fscan(r, &n)
 
 	val := make([]int, n+1)
 	pos := make([]int, n+1)
@@ -23,12 +29,12 @@ func main() {
 
 	//fmt.Println(list, len(list))
 
-	fmt.Scanf("%d", &q)
+	fmt.Fscan(r, &q)
 
 	x := make([]int, q)
 
 	for i := 0; i < q; i++ {
-		fmt.Scanf("%d", &x[i])
+		fmt.Fscan(r, &x[i])
 	}
 
 	for i := 0; i < q; i++ {
@@ -56,9 +62,9 @@ func main() {
 		if i != 1 {
 			fmt.Print("")
 		}
-		fmt.Printf("%d", val[i])
+		fmt.Fprintln(w,val[i])
 	}
-	fmt.Println()
+	//fmt.Println(val)
 
 	// for i := 1; i <= q; i++ {
 	// 	fmt.Scanf("%d", &x)
