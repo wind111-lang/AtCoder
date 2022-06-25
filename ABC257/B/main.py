@@ -14,6 +14,5 @@ for i in A:
             List.append(i+1)
             break
 
-
 for k in List:
   print(k)
