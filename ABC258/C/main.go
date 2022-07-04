@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-    "strings"
+	"strings"
 )
 
 func main() {
@@ -15,27 +15,20 @@ func main() {
 	var n,q int
 	var s string
 
-	//slice := make([]string, 0,n)
-
 	var t,x int
 
 	fmt.Fscan(r,&n,&q)
 	fmt.Fscan(r,&s)
 
+    p := 0
     str := strings.Split(s,"")
-
-    num := 0
-
-	//fmt.Println(bytes)
-
-	//fmt.Println(s_arr)
 
 	for i := 0; i < q; i++{
 		fmt.Fscan(r,&t,&x)
 		if t == 1{
-          num += x
+			p += x
 		}else if t == 2{
-          fmt.Fprintln(w,string(str[(x-num-1)%n]))
+            fmt.Fprintln(w,str[(x-p-1)%n])
 		}
 	}
 }
