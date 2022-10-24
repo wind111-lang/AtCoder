@@ -28,7 +28,7 @@ func main() {
 		if t == 1{
 			p += x
 		}else if t == 2{
-            fmt.Fprintln(w,str[(x-p-1)%n])
+          fmt.Fprintln(w,str[((x+n-p)-1)%n])
 		}
 	}
 }
